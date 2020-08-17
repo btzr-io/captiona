@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from tasks import searchTextTracks
 
 server = Flask(__name__)
