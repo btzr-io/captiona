@@ -3,6 +3,10 @@ from tasks import searchTextTracks
 
 server = Flask(__name__)
 
+@server.errorhandler(404)
+def resource_not_found(e):
+    return jsonify(error=str(e)), 404
+
 @server.route('/')
 def hello_world():
     return { "version": "0.0.1", "status": "ok" }
