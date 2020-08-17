@@ -3,9 +3,9 @@ from tasks import searchTextTracks
 
 server = Flask(__name__)
 
-@server.route('/api')
+@server.route('/')
 def hello_world():
-    return { "version": "0.0.1", "hello": "world" }
+    return { "version": "0.0.1", "status": "ok" }
 
 @server.route('/text_tracks/<string:claim_id>',  methods=['GET'])
 def get_text_tracks(claim_id):
