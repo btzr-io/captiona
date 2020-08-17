@@ -1,7 +1,12 @@
 from flask import Flask, request, jsonify
 from tasks import searchTextTracks
+from cache import cache
 
+# Create server
 server = Flask(__name__)
+
+# Initialize cache
+cache.init_app(server)
 
 @server.errorhandler(404)
 def resource_not_found(e):
@@ -12,6 +17,7 @@ def hello_world():
     return { "version": "0.0.1", "status": "ok" }
 
 @server.route('/text_tracks/<string:claim_id>',  methods=['GET'])
+@cache.cached(query_string=True)
 def get_text_tracks(claim_id):
     language = request.args.get('lang')
     text_tracks = searchTextTracks(claim_id, None, language)

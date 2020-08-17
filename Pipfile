@@ -12,6 +12,7 @@ gunicorn = "*"
 langcodes = "*"
 pygments = "*"
 pypika = "*"
+flask-caching = "*"
 
 [requires]
 python_version = "3.8"
