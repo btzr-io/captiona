@@ -13,13 +13,15 @@ STREAM_API = "https://cdn.lbryplayer.xyz/api/v3/streams/free/"
 def make_entry(entry, lang):
     return {
       "lang_tag": lang.language,
-      "lang_name": lang.language_name(),
+      "lang_name": lang.language_name().lower(),
+      "lang_native_name": lang.autonym().lower(),
+      "track_id": entry['claim_id'],
+      "track_kind": "subtitle",
       # "verified": False,
       # "source_url": STREAM_API + entry["name"] + "/" + entry["claim_id"] + "/test",
       # "source_type": "community",
       "transcriber": entry['publisher_id']
     }
-
 
 mime_type = "application/x-ext-vtt"
 
