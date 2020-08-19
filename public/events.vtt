@@ -1,0 +1,27 @@
+WEBVTT
+
+NOTE
+This file contains timed events for the interactive video demo. For a more advance usage you can use frameworks for state and event manager like Redux.
+
+1
+00:00:00.250 --> 00:00:03.000
+{
+ "type": "link",
+ "title": "🔥 Feature message",
+ "url": "https://en.wikipedia.org/wiki/Samurai_Pizza_Cats"
+}
+
+2
+00:07.810 --> 00:14.221
+{
+ "type": "poll",
+ "title": "🐈 Are cats awesome ?"
+}
+
+3
+00:11.441 --> 00:14.441
+{
+ "type": "LongLat",
+ "lat" : "36.198269",
+ "long": "137.2315355"
+}
